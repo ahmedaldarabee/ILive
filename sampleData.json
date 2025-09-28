@@ -1,0 +1,94 @@
+[
+    {
+        "title": "Modern Family House",
+        "description": "Spacious 4-bedroom family home with a large backyard and modern finishes.",
+        "price": 350000,
+        "bedrooms": 4,
+        "bathrooms": 3,
+        "area": 2500,
+        "address": "123 Maple Street",
+        "city": "Denver",
+        "state": "CO",
+        "zipCode": "80205",
+        "propertyType": "house",
+        "status": "for-sale",
+        "images": [
+        "https://res.cloudinary.com/demo/image/upload/v1/house1.jpg",
+        "https://res.cloudinary.com/demo/image/upload/v1/house1_interior.jpg"
+        ],
+        "featured": true
+    },
+    {
+        "title": "Luxury Apartment Downtown",
+        "description": "High-rise apartment with stunning city views and premium amenities.",
+        "price": 2200,
+        "bedrooms": 2,
+        "bathrooms": 2,
+        "area": 1100,
+        "address": "500 Main Ave Apt 23B",
+        "city": "New York",
+        "state": "NY",
+        "zipCode": "10001",
+        "propertyType": "apartment",
+        "status": "for-rent",
+        "images": [
+        "https://res.cloudinary.com/demo/image/upload/v1/apartment1.jpg",
+        "https://res.cloudinary.com/demo/image/upload/v1/apartment1_view.jpg"
+        ],
+        "featured": false
+    },
+    {
+        "title": "Cozy Condo by the Beach",
+        "description": "Relax in this 2-bedroom condo just steps from the ocean.",
+        "price": 180000,
+        "bedrooms": 2,
+        "bathrooms": 1,
+        "area": 900,
+        "address": "88 Ocean Drive Unit 5C",
+        "city": "Miami",
+        "state": "FL",
+        "zipCode": "33139",
+        "propertyType": "condo",
+        "status": "sold",
+        "images": [
+        "https://res.cloudinary.com/demo/image/upload/v1/condo1.jpg"
+        ],
+        "featured": false
+    },
+    {
+        "title": "Townhouse with Garage",
+        "description": "3-story townhouse with private garage and modern kitchen.",
+        "price": 275000,
+        "bedrooms": 3,
+        "bathrooms": 2,
+        "area": 1600,
+        "address": "77 Oakwood Lane",
+        "city": "Austin",
+        "state": "TX",
+        "zipCode": "73301",
+        "propertyType": "townhouse",
+        "status": "for-sale",
+        "images": [
+        "https://res.cloudinary.com/demo/image/upload/v1/townhouse1.jpg"
+        ],
+        "featured": true
+    },
+    {
+        "title": "Student Apartment",
+        "description": "Affordable 1-bedroom apartment near the university campus.",
+        "price": 950,
+        "bedrooms": 1,
+        "bathrooms": 1,
+        "area": 600,
+        "address": "42 College Street",
+        "city": "Boston",
+        "state": "MA",
+        "zipCode": "02115",
+        "propertyType": "apartment",
+        "status": "rented",
+        "images": [
+        "https://res.cloudinary.com/demo/image/upload/v1/apartment2.jpg"
+        ],
+        "featured": false
+    }
+]
