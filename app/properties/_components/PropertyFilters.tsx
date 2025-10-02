@@ -7,14 +7,15 @@ interface IPropertyFiltersProps {
 }
 
 const PropertyFilters = ({filters,onFiltersChange}:IPropertyFiltersProps) => {
-    // key: keyof Filters: this section it will access into these values: house,apartment,townhouse...
-    // value: any that be what i select from current form
     const handleFilterChanges = (key: keyof Filters,value: any) => {
-
+        onFiltersChange({
+            ...filters,
+            [key]: value === "" || value === "all" ? undefined : value
+        });
     }
+
     return (
         <div className='space-y-4'>
-
             <form
                 className='grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-4'
             >
@@ -81,7 +82,7 @@ const PropertyFilters = ({filters,onFiltersChange}:IPropertyFiltersProps) => {
                         name="bedrooms"
                         id="bedrooms"
                         value={filters.bedrooms || "all"}
-                        onChange={(e) => handleFilterChanges("bedrooms",e.target.value)}
+                        onChange={(e) => handleFilterChanges("bedrooms",Number(e.target.value))}
                         
                     >
 
@@ -107,7 +108,7 @@ const PropertyFilters = ({filters,onFiltersChange}:IPropertyFiltersProps) => {
                         name="bathrooms"
                         id="bathrooms"
                         value={filters.bathrooms || "all"}
-                        onChange={(e) => handleFilterChanges("bathrooms",e.target.value)}
+                        onChange={(e) => handleFilterChanges("bathrooms",Number(e.target.value))}
                         
                     >
 
@@ -135,7 +136,7 @@ const PropertyFilters = ({filters,onFiltersChange}:IPropertyFiltersProps) => {
                         name="minPrice"
                         id="minPrice"
                         value={filters.minPrice || "all"}
-                        onChange={(e) => handleFilterChanges("minPrice",e.target.value)}
+                        onChange={(e) => handleFilterChanges("minPrice",Number(e.target.value))}
                     />
                 </div>
                 
@@ -149,16 +150,15 @@ const PropertyFilters = ({filters,onFiltersChange}:IPropertyFiltersProps) => {
 
                     <input
                         type='number'
-                        placeholder='min price'
+                        placeholder='max price'
                         className='w-full p-2 border border-gray-300 rounded-md'
                         name="maxPrice"
                         id="maxPrice"
                         value={filters.maxPrice || "all"}
-                        onChange={(e) => handleFilterChanges("maxPrice",e.target.value)}
+                        onChange={(e) => handleFilterChanges("maxPrice",Number(e.target.value))}
                     />
                 </div>
             </form>
-
         </div>
     )
 }

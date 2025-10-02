@@ -32,8 +32,6 @@ const FeaturedProperties = () => {
         <div className='w-full container mx-auto'>
             <div className='w-full flex-col flex justify-between items-center my-8 space-y-12'>
                 <h2>featured properties </h2>
-
-
                 {
                     featuredData === undefined ? 
                     (
@@ -67,7 +65,7 @@ const FeaturedProperties = () => {
                         </div>
                     )
                 }
-                <div className='w-full flex justify-end items-center'>
+                <div className='w-full flex justify-center items-center'>
                     <Button
                         onClick={() => router.push("/properties")}
                         className='capitalize  bg-sky-600 hover:bg-sky-700 cursor-pointer'

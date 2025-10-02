@@ -17,8 +17,8 @@ export const getProperties = query({
         
         // Apply filters
         // These conditions are works as :
-            // Firstly, if user select data
-                // Then i will check if selected option not be all!
+        // Firstly, if user select data
+        // Then i will check if selected option not be all!
         // Then i will show result based on selected option!
 
         if(args.propertyType && args.propertyType !== "all"){

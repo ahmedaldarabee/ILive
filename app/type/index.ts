@@ -12,3 +12,20 @@ export interface PropertyFilters {
     bedrooms?:number,
     bathrooms?:number,
 }
+
+export interface PropertyFormData {
+    title:string,
+    description:string,
+    price:number,
+    bedrooms:number,
+    bathrooms:number,
+    area:number,
+    address:string,
+    city:string,
+    state:string,
+    zipCode:string,
+    propertyType:PropertyType,
+    status:PropertyStatus,
+    images: string[],
+    featured: boolean,
+}

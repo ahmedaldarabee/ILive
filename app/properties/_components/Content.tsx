@@ -4,15 +4,18 @@ import { Button } from '@/components/ui/button'
 import { api } from '@/convex/_generated/api'
 import { useQuery } from 'convex/react'
 import React, { useState } from 'react'
-import { useRouter } from 'next/navigation'
-import { propertiesListedStatus } from '@/app/_components/Home/FeaturedProperties'
 import {PropertyFilters as Filters} from "@/app/type"
 import PropertyCard from '@/app/_components/Home/PropertyCard'
 import PropertyFilters from './PropertyFilters'
+import { ArrowRightIcon } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 const Content = () => {
     const [filters,setFilters] = useState<Filters>({});
+    // useQuery(API-METHOD,Args);
     const properties = useQuery(api.properties.getProperties,filters);
+
+    const router = useRouter();
 
     return (
         <div className='w-full container mx-auto'>
@@ -56,7 +59,17 @@ const Content = () => {
                             }
                         </div>
                     )
-                }                
+                }
+
+                <div className='w-full flex justify-center items-center'>
+                    <Button
+                        onClick={() => router.push("/properties/new")}
+                        className='capitalize  bg-sky-600 hover:bg-sky-700 cursor-pointer'
+                        >
+                            add new property 
+                            <ArrowRightIcon/>
+                        </Button>
+                </div>            
             </div>
         </div>
     )

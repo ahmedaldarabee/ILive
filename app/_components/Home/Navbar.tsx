@@ -16,19 +16,19 @@ const Navbar = () => {
 
                     <div className="hidden md:flex items-center gap-6 ml-7">
                         <a href="#" className="relative overflow-hidden h-6 group">
-                            <span className="block group-hover:-translate-y-full transition-transform duration-300">Products</span>
+                            <span className="block group-hover:-translate-y-full transition-transform duration-300">home</span>
                             <span
-                                className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Products</span>
+                                className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">home</span>
                         </a>
                         <a href="#" className="relative overflow-hidden h-6 group">
-                            <span className="block group-hover:-translate-y-full transition-transform duration-300">Stories</span>
+                            <span className="block group-hover:-translate-y-full transition-transform duration-300">properties</span>
                             <span
-                                className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Stories</span>
+                                className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">properties</span>
                         </a>
                         <a href="#" className="relative overflow-hidden h-6 group">
-                            <span className="block group-hover:-translate-y-full transition-transform duration-300">Pricing</span>
+                            <span className="block group-hover:-translate-y-full transition-transform duration-300">new property</span>
                             <span
-                                className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Pricing</span>
+                                className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">new property</span>
                         </a>
                         <a href="#" className="relative overflow-hidden h-6 group">
                             <span className="block group-hover:-translate-y-full transition-transform duration-300">Docs</span>
