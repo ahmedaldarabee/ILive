@@ -1,30 +1,32 @@
-// import { api } from '@/convex/_generated/api';
-// import { useUser } from '@clerk/nextjs'
-// import { useMutation } from 'convex/react';
-// import React, { useEffect } from 'react'
+"use client"
 
-// const ConnectUserToConvex = () => {
+import { api } from '@/convex/_generated/api';
+import { useUser } from '@clerk/nextjs'
+import { useMutation } from 'convex/react';
+import React, { useEffect } from 'react'
 
-//     const {user} = useUser();
-//     const updateUser = useMutation(api.users.updateUser);
+export const ConnectUserToConvex = () => {
 
-//     useEffect(() => {
-//         if(!user) return;
+    const {user} = useUser();
+    const updateUser = useMutation(api.users.updateUser);
 
-//         const syncUser = async () => {
-//             try {
-//                 await updateUser({
-//                     userId:user?.id,
-//                     name:user?.firstName,
-//                     email:user?.primaryEmailAddress?.emailAddress
-//                 })
-//             } catch (error) {
-//                 console.error(error);
-//             }
-//         }
+    useEffect(() => {
+        if(!user) return;
 
-//         syncUser();
-//     },[user,updateUser]);
+        const syncUser = async () => {
+            try {
+                await updateUser({
+                    userId:user?.id,
+                    name:user?.firstName ?? "", // that mean if null take ""
+                    email:user?.primaryEmailAddress?.emailAddress ?? ""
+                })
+            } catch (error) {
+                console.error(error);
+            }
+        }
 
-//     return null;
-// }
+        syncUser();
+    },[user,updateUser]);
+
+    return null;
+}

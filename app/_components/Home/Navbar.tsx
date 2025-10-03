@@ -1,5 +1,6 @@
 "use client"
 
+import Link from 'next/link';
 import { useRouter } from 'next/navigation'
 import React from 'react'
 
@@ -15,26 +16,25 @@ const Navbar = () => {
                     </h3>
 
                     <div className="hidden md:flex items-center gap-6 ml-7">
-                        <a href="#" className="relative overflow-hidden h-6 group">
-                            <span className="block group-hover:-translate-y-full transition-transform duration-300">home</span>
+                        <Link href="/" className="relative overflow-hidden h-6 group">
+                            <span className="block group-hover:-translate-y-full transition-transform duration-300">Home</span>
+                            <span className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Home</span>
+                        </Link>
+                        <Link href="/properties" className="relative overflow-hidden h-6 group">
+                            <span className="block group-hover:-translate-y-full transition-transform duration-300">Properties</span>
                             <span
-                                className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">home</span>
-                        </a>
-                        <a href="#" className="relative overflow-hidden h-6 group">
-                            <span className="block group-hover:-translate-y-full transition-transform duration-300">properties</span>
+                                className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Properties</span>
+                        </Link>
+                        <Link href="properties/new" className="relative overflow-hidden h-6 group">
+                            <span className="block group-hover:-translate-y-full transition-transform duration-300">New Property</span>
                             <span
-                                className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">properties</span>
-                        </a>
-                        <a href="#" className="relative overflow-hidden h-6 group">
-                            <span className="block group-hover:-translate-y-full transition-transform duration-300">new property</span>
-                            <span
-                                className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">new property</span>
-                        </a>
-                        <a href="#" className="relative overflow-hidden h-6 group">
+                                className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">New Property</span>
+                        </Link>
+                        <Link href="/" className="relative overflow-hidden h-6 group">
                             <span className="block group-hover:-translate-y-full transition-transform duration-300">Docs</span>
                             <span
                                 className="block absolute top-full left-0 group-hover:translate-y-[-100%] transition-transform duration-300">Docs</span>
-                        </a>
+                        </Link>
                     </div>
 
                     <div className="hidden ml-14 md:flex items-center gap-4">
@@ -55,7 +55,7 @@ const Navbar = () => {
                             Products
                         </a>
                         <a className="hover:text-indigo-600" href="#">
-                            Customer Stories
+                            properties
                         </a>
                         <a className="hover:text-indigo-600" href="#">
                             Pricing

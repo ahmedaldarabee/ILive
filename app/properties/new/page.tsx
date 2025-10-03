@@ -5,7 +5,7 @@ const page = () => {
     return (
         <div className='w-full min-h-screen py-20'>
             <div className="container mx-auto">
-                <PropertyForm/>
+                <PropertyForm />
             </div>
         </div>
     )

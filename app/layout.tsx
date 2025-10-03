@@ -5,6 +5,8 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { ConvexClientProvider } from "./ConvexClientProvider";
 import Navbar from "./_components/Home/Navbar";
 import Footer from "./_components/Home/Footer";
+import { Toaster } from "sonner";
+import { ConnectUserToConvex } from "./ConnectUserToConvex";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -33,7 +35,9 @@ export default function RootLayout({
           <body
             className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-x-hidden min-h-screen`}
           >
+            <ConnectUserToConvex/>
             <Navbar />
+            <Toaster richColors position="top-center" />
             {children}
             <Footer/>
           </body>
