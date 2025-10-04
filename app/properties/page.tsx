@@ -1,11 +1,14 @@
 
-import React from 'react'
+import React, { Suspense } from 'react'
 import Content from './_components/Content'
+import Loading from '@/animations/Loading/page'
 
 const page = () => {
     return (
         <div className='container mx-auto w-full py-20'>
-            <Content/>
+            <Suspense fallback={<Loading/>}>
+                <Content/>
+            </Suspense>
         </div>
     )
 }
