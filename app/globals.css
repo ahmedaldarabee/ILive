@@ -145,3 +145,16 @@ h2::before {
 .contactDetailBtn {
   @apply bg-sky-600 text-white hover:bg-sky-700 cursor-pointer w-[200px] transition-all duration-300 capitalize
 }
+.marquee-inner {
+  animation: marqueeScroll linear infinite;
+}
+
+@keyframes marqueeScroll {
+  0% {
+      transform: translateX(0%);
+  }
+
+  100% {
+      transform: translateX(-50%);
+  }
+}

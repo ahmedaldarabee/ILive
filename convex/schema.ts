@@ -39,5 +39,21 @@ export default defineSchema({
         ),
         images: v.array(v.string()),
         featured: v.optional(v.boolean())
+    }),
+
+    propertyViewings: defineTable({
+        propertyId:v.id("properties"), //This way that be linking between tables by using id!
+        propertyTitle:v.string(),
+        userEmail:v.string(),
+        userName:v.optional(v.string()),
+        viewingDate:v.string(),
+        viewingTime:v.string(),
+        message:v.optional(v.string()),
+        createdAt:v.optional(v.number()),
+        userId: v.optional(v.string()),
     })
+    // index for providing speed query data searching !
+    .index("by_property",["propertyId"])
+    .index("by_user",["userId"])
+    .index("by_email",["userEmail"])
 })

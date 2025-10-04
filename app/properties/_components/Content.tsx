@@ -3,12 +3,13 @@
 import { Button } from "@/components/ui/button";
 import { api } from "@/convex/_generated/api";
 import { useQuery } from "convex/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { PropertyFilters as Filters } from "@/app/types";
 import PropertyCard from "@/app/_components/Home/PropertyCard";
 import PropertyFilters from "./PropertyFilters";
 import { ArrowRightIcon } from "lucide-react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
+
 
 const Content = () => {
   const [filters, setFilters] = useState<Filters>({});
@@ -16,6 +17,20 @@ const Content = () => {
   const properties = useQuery(api.properties.getProperties, filters);
 
   const router = useRouter();
+  
+  // filter system from url - from features component
+  const paramsURL = useSearchParams();
+
+  const urlPropertyType = paramsURL.get("type");
+
+  useEffect(() => {
+    if(paramsURL && urlPropertyType){
+      setFilters((prev) => ({
+        ...prev,
+        propertyType:urlPropertyType
+      }))
+    }
+  },[paramsURL,urlPropertyType])
 
   return (
     <div className="w-full container mx-auto">

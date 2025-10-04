@@ -12,7 +12,7 @@ import { toast, Toaster } from "sonner";
 
 // Partial That be work with data where data maybe immediately or optional
 interface IPropertyProps {
-  data?: Partial<PropertyFormData>;
+  data?: Partial<PropertyFormData> | any;
   isEditing?: boolean;
   propertyId?: string;
 }
@@ -141,7 +141,7 @@ const PropertyForm = ({
   return (
     <form onSubmit={handleFormSubmit} className="space-y-6 max-sm:px-10">
       {/* property main info */}
-      <div className="bg-gray-50 p-6 rounded-lg shadow-md border border-sky-700 cursor-pointer">
+      <div className="bg-white p-6 rounded-lg shadow-md border border-sky-700 cursor-pointer">
         <h3 className="capitalize font-medium text-xl">basic information</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="md:col-span-2 space-y-2">
@@ -219,7 +219,7 @@ const PropertyForm = ({
       </div>
 
       {/* property details */}
-      <div className="bg-gray-50 p-6 rounded-lg shadow-md border border-sky-700 cursor-pointer">
+      <div className="bg-white p-6 rounded-lg shadow-md border border-sky-700 cursor-pointer">
         <h3 className="capitalize font-medium text-xl">property details</h3>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -456,7 +456,8 @@ const PropertyForm = ({
           type="submit"
           className={`${isUploading === true ? "bg-sky-900 pointer-events-none" : "bg-sky-600"}  hover:bg-sky-800 cursor-pointer transition-all duration-300`}
         >
-          Create your property
+          
+          {isEditing ? `Edit ${formData?.title} Property`:"Create your property"}
         </Button>
       </div>
     </form>

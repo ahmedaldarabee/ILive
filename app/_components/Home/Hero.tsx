@@ -3,10 +3,10 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <div
+        <section
         className="w-full h-[500px] bg-cover bg-center"
         style={{ backgroundImage: "url('/assets/Imgs/hero-2.jpg')" }}
-        ></div>
+        ></section>
     )
 }
 

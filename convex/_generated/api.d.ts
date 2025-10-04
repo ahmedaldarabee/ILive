@@ -14,6 +14,7 @@ import type {
   FunctionReference,
 } from "convex/server";
 import type * as properties from "../properties.js";
+import type * as propertyViewings from "../propertyViewings.js";
 import type * as users from "../users.js";
 
 /**
@@ -26,6 +27,7 @@ import type * as users from "../users.js";
  */
 declare const fullApi: ApiFromModules<{
   properties: typeof properties;
+  propertyViewings: typeof propertyViewings;
   users: typeof users;
 }>;
 export declare const api: FilterApi<

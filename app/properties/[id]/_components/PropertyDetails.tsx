@@ -3,12 +3,21 @@
 import { Button } from '@/components/ui/button'
 import { api } from '@/convex/_generated/api'
 import { useMutation, useQuery } from 'convex/react'
-import { BadgeDollarSign, BadgeInfo, BedDouble, BrickWall, ChevronRight, Cog,MapPinHouse,Toilet,Trash2 } from 'lucide-react'
+import { BadgeDollarSign, BadgeInfo, BedDouble, BrickWall, ChevronRight, Cog,MapPinHouse,Send,Toilet,Trash2 } from 'lucide-react'
 import Image from 'next/image'
 import { useRouter } from 'next/navigation'
 import React, { useState } from 'react'
 import { toast } from 'sonner'
 import Swal from 'sweetalert2'
+import {
+    Dialog,
+    DialogContent,
+    DialogDescription,
+    DialogHeader,
+    DialogTitle,
+    DialogTrigger,
+} from "@/components/ui/dialog"
+import ScheduleDetails from './ScheduleDetails'
 
 
 interface IPropertyDetailsProps{
@@ -25,7 +34,6 @@ const PropertyDetails = ({propertyId}:IPropertyDetailsProps) => {
 
     const deleteProperty  = useMutation(api.properties.deleteProperty);
     const router = useRouter();
-
     
     const handlePropertyDeletion = async () => {
         Swal.fire({
@@ -59,7 +67,9 @@ const PropertyDetails = ({propertyId}:IPropertyDetailsProps) => {
                 <h3 className='capitalize text-3xl font-medium flex items-center gap-2'>{property?.title}   </h3>
                 <div 
                     className='flex items-center gap-4'>
-                        <Button className='transition-all duration-300 capitalize bg-sky-600 cursor-pointer hover:bg-sky-800 px-10'
+                        <Button 
+                        onClick={() => router.push(`/properties/${propertyId}/edit`)}
+                        className='transition-all duration-300 capitalize bg-sky-600 cursor-pointer hover:bg-sky-800 px-10'
                             >edit <Cog className='w-4 h-4' /></Button>
 
                         <Button 
@@ -151,8 +161,30 @@ const PropertyDetails = ({propertyId}:IPropertyDetailsProps) => {
 
                 <div className='flex md:items-center justify-center gap-4 flex-col'>
                     <h2 className='text-sky-600 text-2xl font-medium'>Contact Us Information's</h2>
-                    <Button className='contactDetailBtn'>contact agent</Button>
-                    <Button className='contactDetailBtn'>schedule meeting</Button>
+                    <Dialog>
+                        <DialogTrigger>
+                            <div className='flex items-start'>
+                                <Button className='contactDetailBtn'>contact agent</Button>
+                            </div>
+                        </DialogTrigger>
+
+                        <DialogContent>
+                            <DialogHeader>
+                            <DialogTitle className='my-2 capitalize'>whatsApp phone number</DialogTitle>
+                            <DialogDescription 
+                                className='flex md:items-center gap-2 cursor-pointer'
+                            > <Send className='w-4 h-4' /> +962-785266266 </DialogDescription>
+                            </DialogHeader>
+                        </DialogContent>
+
+                    </Dialog>
+                    {/* schedule component */}                    
+                    <ScheduleDetails
+                        property = {{
+                            _id:property?._id,
+                            title:property?.title,
+                        }}
+                    />
                     <Button className='contactDetailBtn'>save property</Button>
                 </div>
             </div>

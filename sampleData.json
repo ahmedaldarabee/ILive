@@ -13,8 +13,8 @@
         "propertyType": "house",
         "status": "for-sale",
         "images": [
-        "https://res.cloudinary.com/demo/image/upload/v1/house1.jpg",
-        "https://res.cloudinary.com/demo/image/upload/v1/house1_interior.jpg"
+            "https://res.cloudinary.com/demo/image/upload/v1/house1.jpg",
+            "https://res.cloudinary.com/demo/image/upload/v1/house1_interior.jpg"
         ],
         "featured": true
     },

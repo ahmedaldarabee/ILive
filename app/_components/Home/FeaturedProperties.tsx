@@ -29,7 +29,7 @@ const FeaturedProperties = () => {
     const featuredData = useQuery(api.properties.getFeaturedProperties);
 
     return (
-        <div className='w-full container mx-auto'>
+        <section className='w-full container mx-auto'>
             <div className='w-full flex-col flex justify-between items-center my-8 space-y-12'>
                 <h2>featured properties </h2>
                 {
@@ -94,7 +94,7 @@ const FeaturedProperties = () => {
                 </div>
 
             </div>
-        </div>
+        </section>
     )
 }
 
