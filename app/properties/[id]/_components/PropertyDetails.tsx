@@ -163,7 +163,7 @@ const PropertyDetails = ({propertyId}:IPropertyDetailsProps) => {
                     <h2 className='text-sky-600 text-2xl font-medium'>Contact Us Information's</h2>
                     <Dialog>
                         <DialogTrigger>
-                            <div className='flex items-start'>
+                            <div className=' flex items-start'>
                                 <Button className='contactDetailBtn'>contact agent</Button>
                             </div>
                         </DialogTrigger>

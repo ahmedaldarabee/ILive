@@ -92,10 +92,12 @@ const ScheduleDetails = ({property}:IScheduleDetailsProps) => {
 
                 <DialogContent>
                     <DialogHeader>
-                        <DialogTitle>Book view about {property?.title}?</DialogTitle>
+                        <DialogTitle>
+                            <div> Book view about {property?.title}?</div>
+                        </DialogTitle>
                     </DialogHeader>
                     
-                    <div className='w-full h-full'>
+                    <div className='w-full h-full '>
                         <div className=' my-6 w-full h-full'>
                             <form 
                             onSubmit={handleFormSubmit}

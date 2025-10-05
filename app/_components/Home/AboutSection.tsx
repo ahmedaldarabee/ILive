@@ -22,7 +22,7 @@ const AboutSection = () => {
         <motion.section
             initial={{
                 opacity:0,
-                y:-200,
+                y:200,
             }}
 
             whileInView={{
